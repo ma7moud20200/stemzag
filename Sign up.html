@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Stem Zag Academy</title>
+  <style>
+    /* إعداد الصفحة العامة */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+    }
+
+    /* الحاوية */
+    .signup-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      animation: slideIn 0.6s ease-out;
+    }
+
+    /* التأثير الحركي */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(0);
+      }
+    }
+
+
+     /* الصورة */
+     .login-container img {
+      width: 200%;
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* حذف الحدود الدائرية */
+    }
+    /* النصوص */
+    .signup-container h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .signup-container p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    /* النموذج */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input {
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #2575fc;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #2575fc, #6a11cb);
+      transform: scale(1.05);
+    }
+
+    button:active {
+      transform: scale(1);
+    }
+
+    .already-have-account {
+      margin-top: 10px;
+      display: block;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .already-have-account a {
+      color: #2575fc;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .already-have-account a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <!-- العنوان والنصوص -->
+    <h1>Create an Account</h1>
+    <p>Fill in the form below to create an account.</p>
+
+    <!-- النموذج -->
+    <form action="#" method="POST">
+      <label for="full-name">Full Name</label>
+      <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- رابط لتسجيل الدخول إذا كان لديك حساب -->
+    <p class="already-have-account">Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+
+  <!-- إضافة سكربت JavaScript للتحقق من البيانات -->
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      
+      if (password !== confirmPassword) {
+        e.preventDefault();
+        alert('Passwords do not match.');
+      }
+    });
+  </script>
+</body>
+</html>
+
+

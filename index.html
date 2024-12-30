@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <title>Tech Leaders Showcase</title>
+  <style>
+    /* إعدادات عامة */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* الجمل المستقلة */
+    .independent-text-1, .independent-text-2 {
+      position: absolute;
+      color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #4caf50, #2196f3);
+      -webkit-background-clip: text;
+      
+    }
+    .independent-text-1 {
+      top: 200px;
+      left: 80%;
+      transform: translateX(-50%);
+      font-size: 28px;
+      text-align: center;
+      animation: pulse 3.5s infinite;
+    }
+    .independent-text-2 {
+      top: 125px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translateX(-50%) scale(1);
+      }
+      50% {
+        transform: translateX(-50%) scale(1.1);
+      }
+      100% {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #333;
+      font-weight: bold;
+    }
+    /* شريط التنقل */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 30px;
+      background: linear-gradient(167deg,#ffffff, #f5f4f7, #5d00bb);
+      box-shadow: 0 2px 10px rgba(180, 175, 175, 0.5);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      height: 50px;
+      background-color: rgba(85, 122, 25, 0.8);
+      color: rgb(32, 112, 49);
+    }
+
+    nav .logo {
+      flex: 0.5;
+    }
+
+    nav .logo img {
+      width: 140px;
+      height: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      flex: 2;
+      justify-content: center;
+      margin: 10;
+    }
+
+    nav ul li {
+      font-weight: bold;
+      color: rgb(2, 77, 73);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li:hover {
+      color: #ffdd57;
+    }
+
+    .login-btn {
+      background-color: #ffdd57;
+      color: rgb(159, 50, 192);
+      border: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.2rem;
+      min-width: 5px;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-left: 5px;
+      margin-right: 90px;
+    }
+
+    .login-btn:hover {
+      background-color: #f6f6f7;
+      transform: scale(1.2);
+    }
+
+    /* تحسينات للموبايل */
+    @media (max-width: 768px) {
+      .independent-text-1, .independent-text-2 {
+        font-size: 18px;
+        top: 20px;
+      }
+      .hero img {
+        max-width: 80%;
+      }
+    }
+
+    /* القسم العلوي */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 120px 50px 80px;
+      background-color: #fff;
+    }
+
+    .hero img {
+      max-width: 30%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-left: 20px;
+    }
+
+    .hero .content {
+      width: 60%;
+    }
+
+    /* الأقسام */
+    .container {
+      width: 15%;
+      max-width: 1200px;
+      margin: 5px auto;
+    }
+
+    .sections {
+      margin-top: -400px;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 15px;
+      color: white;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .section:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* ألوان الأقسام */
+    .programming {
+      background-color: #6a1b9a;
+    }
+
+    .robotics {
+      background-color: #0dd8c7;
+    }
+
+    .math {
+      background-color: #0c71f5;
+    }
+
+    .photoshop {
+      background-color: #ffc107;
+    }
+
+    .English {
+      background-color: #ff5722;
+    }
+
+    /* شريط وسائل التواصل الاجتماعي */
+    .social-bar {
+      position: fixed;
+      bottom: 200px;
+      left: 80%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s;
+    }
+
+    .social-icon img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- الجملة المستقلة الأولى -->
+  <div class="independent-text-1">
+    تحويل الطالب من مستهلك للتكنولوجيا إلى <br><span style="color: #391ed6;">صانع لها</span>
+  </div>
+
+  <!-- الجملة المستقلة الثانية -->
+  <div class="independent-text-2">
+    <span style="color:0;"> Live Classes For Grades 1-12  </span>
+  </div>
+
+  <!-- القسم العلوي -->
+  <section class="hero">
+    <img src="Right Children.jpg" alt="أطفال يشاركون في نشاط تعليمي" >
+    <div class="content"></div>
+  </section>
+
+  <!-- الأقسام -->
+  <div class="container">
+    <div class="sections">
+      <div class="section programming">
+        <a href="#programming-content" class="section-title">Learn programming</a>
+      </div>
+      <div class="section robotics">
+        <a href="#robotics-content" class="section-title">Learn robotics</a>
+      </div>
+      <div class="section math">
+        <a href="#math-content" class="section-title">Learn math</a>
+      </div>
+      <div class="section photoshop">
+        <a href="#photoshop-content" class="section-title">Learn photoshop</a>
+      </div>
+      <div class="section English">
+        <a href="#english-content" class="section-title">Learn English</a>
+      </div>
+    </div>
+  </div>
+
+  <!--  شريط وسائل التواصل الاجتماعي -->
+  <div class="social-bar">
+    <a href="https://facebook.com" class="social-icon" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
+    </a>
+    <a href="https://wa.me/YOUR_NUMBER" class="social-icon" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+    </a>
+    <a href="https://instagram.com" class="social-icon" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+    <a href="https://youtube.com" class="social-icon" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+    </a>
+  </div>
+
+  <!-- شريط التنقل -->
+  <nav id="navbar">
+    <div class="logo">
+      <img src="logo.jpg" alt="Stem Zag Academy Logo">
+    </div>
+    <ul>
+      <li>Students</li>
+      <li>Projects</li>
+      <li>Why Stem Zag Academy</li>
+      <li>Offers</li>
+    </ul>
+    <button class="login-btn" id="login">Login</button>
+  </nav>
+  <script>
+    document.getElementById("login").addEventListener("click", function() {
+      window.location.href = 'login.html';  
+           
+    });
+  </script>
+</body>
+</html>

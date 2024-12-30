@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Login Page</title>
+  <style>
+    /* إعداد الصفحة العامة */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+    }
+
+    /* الحاوية */
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      animation: slideIn 0.6s ease-out;
+    }
+
+    /* التأثير الحركي */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* الصورة */
+    .login-container img {
+      width: 200%;
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* حذف الحدود الدائرية */
+    }
+
+    /* النصوص */
+    .login-container h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .login-container p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .login-container a {
+      color: #2575fc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-container a:hover {
+      text-decoration: underline;
+    }
+
+    /* النموذج */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input {
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #2575fc;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #2575fc, #6a11cb);
+      transform: scale(1.05);
+    }
+
+    button:active {
+      transform: scale(1);
+    }
+
+    .forgot-password {
+      margin-top: 10px;
+      display: block;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .forgot-password:hover {
+      color: #2575fc;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <!-- الصورة -->
+    <img src="logo.jpg" alt="Login Logo">
+    
+    
+    
+    <!-- النموذج -->
+    <form action="#" method="POST">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+    
+
+    <!-- روابط إضافية -->
+    <a href="#" class="forgot-password">Forgot Password?</a>
+    <p class="Don’t have an account?">Don’t have an account? <a href="Sign up.html">Sign up here</a></p>
+  </div>
+ 
+</body>
+</html>
+
